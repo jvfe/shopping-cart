@@ -1,0 +1,8 @@
+.item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.shop-image {
+  max-width: 10rem;
+  object-fit: contain;
+}
