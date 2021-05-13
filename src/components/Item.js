@@ -1,10 +1,10 @@
 import React from "react";
 
-const Item = ({ match }) => {
-  console.log(match);
+const Item = ({ item }) => {
+  console.log(item);
   return (
     <div>
-      <h1>{match.params.id}</h1>
+      <h1>{item.name}</h1>
     </div>
   );
 };

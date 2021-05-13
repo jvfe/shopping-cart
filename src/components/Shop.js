@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import inventory from "../data/instruments.json";
-import "../styles/index.css";
-const App = () => {
-  const [items] = useState(inventory);
-
+const Shop = ({ items }) => {
   return (
     <div>
-      <h1>Hello from App</h1>
+      <h1>Hello from Shop</h1>
       <div className="item-grid">
         {items.map((item) => {
           return (
@@ -22,4 +18,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Shop;
