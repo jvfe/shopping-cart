@@ -1,9 +1,19 @@
 import React from "react";
 
-const Cart = () => {
+const Cart = ({ cart }) => {
+  console.log(cart);
   return (
     <div>
-      <h1>Hello from Cart</h1>
+      <h1>Cart</h1>
+      {cart.map((item) => {
+        return (
+          <div key={item.id}>
+            <h1>{item.name}</h1>
+            <p>{item.count}</p>
+            <button>Minus</button>
+          </div>
+        );
+      })}
     </div>
   );
 };

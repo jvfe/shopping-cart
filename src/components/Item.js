@@ -1,10 +1,10 @@
 import React from "react";
 
-const Item = ({ item }) => {
-  console.log(item);
+const Item = ({ item, addCart }) => {
   return (
     <div>
       <h1>{item.name}</h1>
+      <button onClick={() => addCart(item)}>Add to cart</button>
     </div>
   );
 };
