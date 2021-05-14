@@ -8,7 +8,7 @@ import Nav from "./components/Nav";
 import inventory from "./data/instruments.json";
 import "./styles/index.css";
 
-const Routes = () => {
+const App = () => {
   const [cart, setCart] = useState([]);
 
   const [cartSize, setCartSize] = useState(0);
@@ -95,4 +95,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default App;
