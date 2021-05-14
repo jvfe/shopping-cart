@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SimpleGrid } from "@chakra-ui/react";
 const Shop = ({ items }) => {
   return (
     <div>
-      <h1>Hello from Shop</h1>
-      <div className="item-grid">
+      <SimpleGrid columns={2} spacingX="2em" spacingY="2em" px={6} py={4}>
         {items.map((item) => {
           return (
             <div key={item.id} className="shop-item">
@@ -13,7 +13,7 @@ const Shop = ({ items }) => {
             </div>
           );
         })}
-      </div>
+      </SimpleGrid>
     </div>
   );
 };

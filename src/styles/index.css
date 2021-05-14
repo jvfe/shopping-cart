@@ -1,8 +1,11 @@
-.item-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.shop-image {
-  max-width: 10rem;
-  object-fit: contain;
+
+html,
+body,
+#root {
+  height: 100%;
 }
