@@ -1,23 +1,15 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Image,
-  Center,
-  Text,
-  Heading,
-  Button,
-} from "@chakra-ui/react";
+import { Flex, Image, Center, Text, Heading, Button } from "@chakra-ui/react";
 
 const ShopItem = ({ item, addCart }) => {
   return (
     <Flex px={4} h="100%" bg="black">
       <Flex
-        flexDir={{ sm: "column", lg: "row" }}
+        flexDir={{ base: "column", lg: "row" }}
         alignItems="center"
         justifyContent="center"
       >
-        <Flex mr={4} h="80%" w="100%">
+        <Flex mr={{ base: 0, lg: 4 }} h="80%" w="100%">
           <Flex w="100%">
             <Image
               borderRadius="md"
@@ -37,7 +29,7 @@ const ShopItem = ({ item, addCart }) => {
             significa nadis i pareci latim. Aenean aliquam molestie leo, vitae
             iaculis nisl. Casamentiss faiz malandris se pirulitá.
           </Text>
-          <Button mt={4} w="50%" onClick={() => addCart(item)}>
+          <Button my={4} w="50%" onClick={() => addCart(item)}>
             Add to cart
           </Button>
         </Center>

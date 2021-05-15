@@ -27,14 +27,18 @@ const Nav = ({ cartSize }) => {
       position="sticky"
       top="0"
     >
-      <CLink px={2} as={Link} to="/">
+      <CLink pl={2} as={Link} to="/">
         <Heading size="md">Arpeggio</Heading>
       </CLink>
-      <Box d="flex" justifyContent="space-between" w="15%">
-        <CLink px={2} as={Link} to="/shop">
+      <Box
+        d="flex"
+        justifyContent="space-between"
+        w={{ base: "40%", lg: "15%" }}
+      >
+        <CLink as={Link} to="/shop">
           Shop
         </CLink>
-        <CLink px={2} as={Link} to="/cart">
+        <CLink as={Link} to="/cart">
           <Box d="flex" alignItems="center">
             <Icon title="Cart" boxSize={6} as={MdShoppingCart} />
             <Circle bg="white" color="black" size="1em">
