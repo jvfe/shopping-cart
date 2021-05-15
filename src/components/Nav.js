@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Heading, Text, Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Circle,
+  Heading,
+  Text,
+  Icon,
+  Link as CLink,
+} from "@chakra-ui/react";
 import { MdShoppingCart } from "react-icons/md";
 
 const Nav = ({ cartSize }) => {
@@ -14,34 +21,29 @@ const Nav = ({ cartSize }) => {
       px={4}
       w="100%"
       height="3em"
-      bg="black"
+      bgColor="blackAlpha.900"
       color="white"
+      borderBottom="1px solid slategray"
       position="sticky"
       top="0"
     >
-      <Heading size="md">Arpeggio</Heading>
-      <Box d="flex" justifyContent="space-between" w="25%">
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <Box d="flex" alignItems="center">
-          <Link to="/cart">
+      <CLink px={2} as={Link} to="/">
+        <Heading size="md">Arpeggio</Heading>
+      </CLink>
+      <Box d="flex" justifyContent="space-between" w="15%">
+        <CLink px={2} as={Link} to="/shop">
+          Shop
+        </CLink>
+        <CLink px={2} as={Link} to="/cart">
+          <Box d="flex" alignItems="center">
             <Icon title="Cart" boxSize={6} as={MdShoppingCart} />
-          </Link>
-          <Box
-            d="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="white"
-            color="black"
-            width="1em"
-            height="1em"
-            borderRadius="50%"
-          >
-            <Text fontSize="xs" fontWeight="bold" pt={1}>
-              {cartSize}
-            </Text>
+            <Circle bg="white" color="black" size="1em">
+              <Text fontSize="xs" fontWeight="bold" pt={1}>
+                {cartSize}
+              </Text>
+            </Circle>
           </Box>
-        </Box>
+        </CLink>
       </Box>
     </Box>
   );

@@ -6,7 +6,7 @@ import background from "../assets/background.jpg";
 const Home = () => {
   return (
     <Box
-      bgImage={`url(${background})`}
+      bg={`url(${background})`}
       bgRepeat="no-repeat"
       bgSize="cover"
       height="100%"
@@ -14,7 +14,7 @@ const Home = () => {
       alignItems="center"
       justifyContent="start"
     >
-      <Box d="flex" flexDirection="column" py={5} mx="5em">
+      <Box d="flex" flexDirection="column" py={5} mx="3em">
         <Box color="white">
           <Heading size="4xl">Arpeggio</Heading>
           <Heading fontStyle="italic" textAlign="right" fontFamily="monospace">

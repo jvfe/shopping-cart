@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({ item, addCart }) => {
+const ShopItem = ({ item, addCart }) => {
   return (
     <div>
       <h1>{item.name}</h1>
@@ -9,4 +9,4 @@ const Item = ({ item, addCart }) => {
   );
 };
 
-export default Item;
+export default ShopItem;

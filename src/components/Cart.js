@@ -1,4 +1,5 @@
 import React from "react";
+import CartItem from "./CartItem";
 
 const Cart = ({ cart, remove, minus, plus }) => {
   const subTotal = parseFloat(
@@ -10,13 +11,7 @@ const Cart = ({ cart, remove, minus, plus }) => {
       <h1>Cart</h1>
       {cart.map((item) => {
         return (
-          <div key={item.id}>
-            <h1>{item.name}</h1>
-            <p>{item.count}</p>
-            <button onClick={() => remove(item)}>Remove</button>
-            <button onClick={() => minus(item)}>Minus</button>
-            <button onClick={() => plus(item)}>Plus</button>
-          </div>
+          <CartItem item={item} remove={remove} minus={minus} plus={plus} />
         );
       })}
       <p>{subTotal}</p>

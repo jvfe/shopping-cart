@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
-import Item from "./components/Item";
+import ItemPage from "./components/ItemPage";
 import Nav from "./components/Nav";
 import inventory from "./data/instruments.json";
 import "./styles/index.css";
@@ -75,7 +75,7 @@ const App = () => {
           path="/shop/:id"
           render={(params) => {
             return (
-              <Item
+              <ItemPage
                 item={getItem(params.match.params.id)}
                 addCart={addToCart}
               />
