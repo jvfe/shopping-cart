@@ -34,6 +34,16 @@ const App = () => {
     }
   };
 
+  const changeValue = (e, product) => {
+    const { value } = e.target;
+
+    setCart((prevCart) => {
+      return prevCart.map((item) =>
+        item.id === product.id ? { ...item, count: value } : item
+      );
+    });
+  };
+
   const addToCart = (product) => {
     const sameItem = cart.find((item) => product.id === item.id);
     if (sameItem) {
@@ -85,6 +95,7 @@ const App = () => {
         <Route exact path="/cart">
           <Cart
             cart={cart}
+            changeValue={changeValue}
             remove={removeFromCart}
             minus={removeOne}
             plus={addOne}

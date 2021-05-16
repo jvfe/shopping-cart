@@ -1,8 +1,17 @@
 import React from "react";
-import { Flex, Box, Wrap, Center, Button, Heading } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Wrap,
+  Center,
+  Button,
+  Heading,
+  Link as CLink,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
-const Cart = ({ cart, remove, minus, plus }) => {
+const Cart = ({ cart, changeValue, remove, minus, plus }) => {
   const subTotal = parseFloat(
     cart.reduce((acc, curr) => acc + curr.price * curr.count, 0).toFixed(2)
   );
@@ -11,21 +20,34 @@ const Cart = ({ cart, remove, minus, plus }) => {
     <Box
       d="flex"
       flexDir="column"
+      color="white"
       bg="black"
       minH="100%"
       justifyContent="space-between"
     >
-      <Center color="white" p={4} flexDir="column">
+      <Center p={4} flexDir="column">
         <Heading color="white" mt={3}>
           — Shopping Cart —
         </Heading>
-        <Wrap justify="center" maxW="80%" mt={6}>
-          {cart.map((item) => {
-            return (
-              <CartItem item={item} remove={remove} minus={minus} plus={plus} />
-            );
-          })}
-        </Wrap>
+        {cart.length > 0 ? (
+          <>
+            <Wrap justify="center" maxW="80%" mt={6}>
+              {cart.map((item) => {
+                return (
+                  <CartItem
+                    item={item}
+                    changeValue={changeValue}
+                    remove={remove}
+                    minus={minus}
+                    plus={plus}
+                  />
+                );
+              })}
+            </Wrap>
+          </>
+        ) : (
+          <Heading> Your cart is empty!</Heading>
+        )}
       </Center>
       <Flex
         alignItems="center"
@@ -37,13 +59,21 @@ const Cart = ({ cart, remove, minus, plus }) => {
         maxH="sm"
         w="100%"
         color="white"
-        bgColor="blackAlpha.800"
+        bgColor="blackAlpha.900"
       >
-        <Heading fontSize={{ base: "sm", md: "lg" }}>Go Back</Heading>
+        <CLink as={Link} to="/shop" fontSize={{ base: "sm", md: "lg" }}>
+          ‹ Go Back
+        </CLink>
         <Heading fontSize={{ base: "xl", md: "4xl" }}>
           Total: ${subTotal}
         </Heading>
-        <Button fontSize={{ base: "sm", md: "lg" }} colorScheme="orange" p={1}>
+        <Button
+          bgColor="orange.700"
+          fontSize={{ base: "sm", md: "lg" }}
+          colorScheme="orange"
+          px={2}
+          py={1}
+        >
           Checkout
         </Button>
       </Flex>

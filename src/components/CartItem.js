@@ -13,7 +13,8 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react";
 
-const CartItem = ({ item, remove, minus, plus }) => {
+const CartItem = ({ item, changeValue, remove, minus, plus }) => {
+  const subTotal = parseFloat((item.price * item.count).toFixed(2));
   return (
     <Flex
       flexDir="column"
@@ -52,14 +53,14 @@ const CartItem = ({ item, remove, minus, plus }) => {
         </Flex>
         <Spacer />
         <NumberInput defaultValue={item.count} min={1}>
-          <NumberInputField />
+          <NumberInputField onChange={(e) => changeValue(e, item)} />
           <NumberInputStepper>
             <NumberIncrementStepper onClick={() => plus(item)} />
             <NumberDecrementStepper onClick={() => minus(item)} />
           </NumberInputStepper>
         </NumberInput>
         <Heading mt={2} size="xs">
-          Subtotal: ${item.price * item.count}
+          Subtotal: ${subTotal}
         </Heading>
       </Flex>
     </Flex>
