@@ -28,7 +28,7 @@ const Home = () => {
           </Box>
           <Button
             as={Link}
-            to="/shop"
+            to="/shopping-cart/shop"
             fontFamily="monospace"
             textTransform="uppercase"
             letterSpacing="0.1em"
