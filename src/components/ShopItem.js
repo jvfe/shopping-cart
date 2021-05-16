@@ -12,7 +12,7 @@ const ShopItem = ({ item }) => {
       borderWidth="1px"
       overflow="hidden"
       as={Link}
-      to={`/shop/${item.id}`}
+      to={`/shopping-cart/shop/${item.id}`}
     >
       <Image
         h="80%"

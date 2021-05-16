@@ -76,13 +76,13 @@ const App = () => {
     <Router>
       <Nav cartSize={cartSize} />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/shop">
+        <Route exact path="/shopping-cart" component={Home} />
+        <Route exact path="/shopping-cart/shop">
           <Shop items={inventory}></Shop>
         </Route>
         <Route
           exact
-          path="/shop/:id"
+          path="/shopping-cart/shop/:id"
           render={(params) => {
             return (
               <ItemPage
@@ -92,7 +92,7 @@ const App = () => {
             );
           }}
         />
-        <Route exact path="/cart">
+        <Route exact path="/shopping-cart/cart">
           <Cart
             cart={cart}
             changeValue={changeValue}

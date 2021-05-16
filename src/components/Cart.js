@@ -61,7 +61,11 @@ const Cart = ({ cart, changeValue, remove, minus, plus }) => {
         color="white"
         bgColor="blackAlpha.900"
       >
-        <CLink as={Link} to="/shop" fontSize={{ base: "sm", md: "lg" }}>
+        <CLink
+          as={Link}
+          to="/shopping-cart/shop"
+          fontSize={{ base: "sm", md: "lg" }}
+        >
           ‹ Go Back
         </CLink>
         <Heading fontSize={{ base: "xl", md: "4xl" }}>
