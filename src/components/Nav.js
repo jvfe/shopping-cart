@@ -33,7 +33,7 @@ const Nav = ({ cartSize }) => {
       <Box
         d="flex"
         justifyContent="space-between"
-        w={{ base: "40%", lg: "15%" }}
+        w={{ base: "40%", md: "15%" }}
       >
         <CLink as={Link} to="/shop">
           Shop

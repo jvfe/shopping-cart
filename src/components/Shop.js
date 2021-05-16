@@ -10,16 +10,10 @@ const Shop = ({ items }) => {
       justifyContent="center"
       bgColor="black"
     >
-      <Heading color="white" mt={2}>
-        Our Products
+      <Heading color="white" mt={3}>
+        — Our Products —
       </Heading>
-      <Wrap
-        w={{ sm: "100%", lg: "90%" }}
-        alignItems="center"
-        justifyContent="center"
-        mt={2}
-        p={4}
-      >
+      <Wrap w={{ sm: "100%", lg: "90%" }} justify="center" mt={1} p={4}>
         {items.map((item) => {
           return <ShopItem key={item.id} item={item} />;
         })}

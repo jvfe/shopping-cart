@@ -3,7 +3,7 @@ import { Flex, Image, Center, Text, Heading, Button } from "@chakra-ui/react";
 
 const ShopItem = ({ item, addCart }) => {
   return (
-    <Flex px={4} h="100%" bg="black">
+    <Flex px={4} py={2} minH="100%" bg="black">
       <Flex
         flexDir={{ base: "column", lg: "row" }}
         alignItems="center"
@@ -29,7 +29,13 @@ const ShopItem = ({ item, addCart }) => {
             significa nadis i pareci latim. Aenean aliquam molestie leo, vitae
             iaculis nisl. Casamentiss faiz malandris se pirulitá.
           </Text>
-          <Button my={4} w="50%" onClick={() => addCart(item)}>
+          <Button
+            colorScheme="orange"
+            bgColor="orange.700"
+            my={4}
+            w="50%"
+            onClick={() => addCart(item)}
+          >
             Add to cart
           </Button>
         </Center>
