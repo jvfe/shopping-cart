@@ -8,7 +8,7 @@ import {
   Icon,
   Link as CLink,
 } from "@chakra-ui/react";
-import { MdShoppingCart } from "react-icons/md";
+import { MdShoppingCart, MdShoppingBasket } from "react-icons/md";
 
 const Nav = ({ cartSize }) => {
   return (
@@ -36,7 +36,12 @@ const Nav = ({ cartSize }) => {
         w={{ base: "40%", md: "15%" }}
       >
         <CLink as={Link} to="/shop">
-          Shop
+          <Box d="flex" alignItems="center">
+            <Icon title="Cart" boxSize={6} as={MdShoppingBasket} />
+            <Text fontSize="xs" fontWeight="bold" pt={1}>
+              Shop
+            </Text>
+          </Box>
         </CLink>
         <CLink as={Link} to="/cart">
           <Box d="flex" alignItems="center">

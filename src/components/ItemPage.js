@@ -1,5 +1,14 @@
 import React from "react";
-import { Flex, Image, Center, Text, Heading, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Image,
+  Center,
+  Text,
+  Heading,
+  Button,
+  Icon,
+} from "@chakra-ui/react";
+import { MdAddShoppingCart } from "react-icons/md";
 
 const ShopItem = ({ item, addCart }) => {
   return (
@@ -36,7 +45,8 @@ const ShopItem = ({ item, addCart }) => {
             w="50%"
             onClick={() => addCart(item)}
           >
-            Add to cart
+            <Icon title="Cart" boxSize={6} as={MdAddShoppingCart} />
+            Add to Cart
           </Button>
         </Center>
       </Flex>
